@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "checkJs": true,
+    "moduleResolution": "node",
+    "paths": {
+      "@src/*": [
+        "./src/*"
+      ],
+      "@tests/*": [
+        "./src/__tests__/*"
+      ],
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+    "packages/*/build"
+  ]
+}
