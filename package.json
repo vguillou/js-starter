@@ -37,7 +37,7 @@
     "jest": "^26.0.1",
     "jest-junit": "^11.0.0",
     "lint-staged": "^10.2.11",
-    "prettier": "^2.0.4",
+    "prettier": "^2.0.5",
     "retire": "^2.2.1",
     "yorkie": "^2.0.0"
   },
