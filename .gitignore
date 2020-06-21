@@ -27,14 +27,11 @@ jspm_packages
 # Optional REPL history
 .node_repl_history
 
-# Test reports
-__tests__/reports
+# Reports (test, lint, coverage...)
+/reports
 
 # backup files
 *.bak
-
-# testing
-coverage
 
 # misc
 .DS_Store

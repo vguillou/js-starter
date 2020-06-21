@@ -1,0 +1,27 @@
+version: 2.1
+orbs:
+  node: circleci/node@3.0.0
+jobs:
+  lint-test-scan:
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          name: Lint sources
+          command: yarn run ci:lint
+      - run:
+          name: Test
+          command: yarn ci:test
+      - run:
+          name: Scan for vulnerabilities
+          command: yarn run ci:scan
+      - store_test_results:
+          path: reports/junit
+      - store_artifacts:
+          path: reports/junit
+workflows:
+  lint-test-scan:
+    jobs:
+      - lint-test-scan
