@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.10.3",
-    "@babel/core": "^7.9.0",
+    "@babel/core": "^7.10.3",
     "@babel/preset-env": "^7.9.5",
     "@types/jest": "^26.0.0",
     "babel-eslint": "^10.1.0",
