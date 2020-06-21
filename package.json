@@ -10,10 +10,13 @@
   "private": true,
   "main": "src/index.js",
   "scripts": {
+    "lint": "eslint . --ext js --fix",
     "test": "jest",
     "test:watch": "node --inspect node_modules/.bin/jest --watchAll --runInBand",
-    "lint": "eslint . --ext js --fix",
-    "scan": "retire --colors"
+    "scan": "retire --colors",
+    "ci:lint": "eslint . --ext js --format junit -o reports/junit/js-lint-results.xml",
+    "ci:test": "JEST_JUNIT_OUTPUT_DIR=reports/junit JEST_JUNIT_OUTPUT_NAME=js-test-results.xml jest --ci --reporters=jest-junit",
+    "ci:scan": "retire"
   },
   "dependencies": {
     "moment": "^2.27.0"
@@ -32,6 +35,7 @@
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-prettier": "^3.1.4",
     "jest": "^26.0.1",
+    "jest-junit": "^11.0.0",
     "lint-staged": "^10.1.5",
     "prettier": "^2.0.4",
     "retire": "^2.2.0",
