@@ -1,5 +1,6 @@
 {
   "name": "js-starter",
+  "version": "1.0.0",
   "description": "A comfortable JavaScript starter project",
   "author": {
     "name": "Vincent Guillou",
