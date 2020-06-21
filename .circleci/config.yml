@@ -3,23 +3,25 @@ orbs:
   node: circleci/node@3.0.0
 jobs:
   lint-test-scan:
-    executor:
-      name: node/default
+    executor: node/default
     steps:
       - checkout
       - node/install-packages:
           pkg-manager: yarn
-      - node/with-cache:
-          steps:
-            - run: yarn install --frozen-lockfile
-            - run: yarn ci:lint
-            - run: yarn ci:test
-            - run: yarn ci:scan
+      - run:
+          name: Lint sources
+          command: yarn run ci:lint
+      - run:
+          name: Test
+          command: yarn ci:test
+      - run:
+          name: Scan for vulnerabilities
+          command: yarn run ci:scan
       - store_test_results:
           path: reports/junit
       - store_artifacts:
           path: reports/junit
 workflows:
-    lint-test-scan:
-      jobs:
-        - lint-test-scan
+  lint-test-scan:
+    jobs:
+      - lint-test-scan
