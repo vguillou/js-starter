@@ -34,15 +34,17 @@
     "eslint-import-resolver-babel-module": "^5.1.2",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.2.5",
     "jest": "^26.1.0",
     "jest-junit": "^11.0.0",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
-    "retire": "^2.2.1",
-    "yorkie": "^2.0.0"
+    "retire": "^2.2.1"
   },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "*.{js}": [
