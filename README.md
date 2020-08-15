@@ -56,10 +56,10 @@ Considering your target runtime, you also probably should adjust the [ESLint con
 - Look for configuration in `.eslintrc.js` mainly, but also `.eslintignore`, `.prettierignore` and `.vscode/settings.json`
 
 ### Linting and formatting on commit, automatically fixing minor issues
-- Feature using Lint-Staged and Yorkie, in addition of the tools mentioned previously
-- Look for configuration in `package.json` (see `gitHooks` and `lint-staged` attributes)
+- Feature using Lint-Staged and Husky, in addition of the tools mentioned previously
+- Look for configuration in `package.json` (see `husky > hooks` and `lint-staged` attributes)
 
 ### Custom import resolving
-Say, you preffer to type `@src/index` to import this file from anywhere, rather than its relative path (something like `../../../../../index`)
+Say, you prefer to type `@src/index` to import this file from anywhere, rather than its relative path (something like `../../../../../index`)
 - Feature using Babel and VS Code
 - Look for configuration in `.babelrc` (for runtime resolution) and `jsconfig.json` (for VS Code's intellisense to follow along)
